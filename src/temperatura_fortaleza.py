@@ -1,13 +1,17 @@
 import requests
 
-API_KEY = "26c24013a8d6c1a5e5eeb63f82dcb402"
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+import requests
+from config import OPENWEATHER_API_KEY
 
 
 def obter_parametros_clima() -> dict:
     """Retorna os parâmetros para a requisição da API de clima."""
     return {
         "q": "Fortaleza,BR",
-        "appid": API_KEY,
+        "appid": OPENWEATHER_API_KEY,
         "units": "metric",
         "lang": "pt_br"
     }
