@@ -10,6 +10,6 @@ print(estados[0])
 
 print("\nEstados do Nordeste:") # passo 4: navegar e filtrar
 for estado in estados:
-  if estado["regiao"]["sigla"] == "NE":
+  if estado["regiao"]["sigla"] == "SE":
     print(f' {estado["sigla"]} - {estado["nome"]}')
 

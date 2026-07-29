@@ -24,9 +24,16 @@ def consultar_cep(cep: str) -> dict | None:
 #url = "https://viacep.com.br/ws/60356000/json/"
 #url = "https://viacep.com.br/ws/00000000/json/"
 url = "https://viacep.com.br/ws/abc/json/"
-#resposta = requests.get(url, timeout=10)
+resposta = requests.get(url, timeout=10)
 #print("Status", resposta.status_code) 
 #print("Texto da resposta",resposta.json()) 
 #print("Texto da resposta",resposta.text) 
-consultar_cep("60356000")
+#consultar_cep("60356000")
+#consultar_cep("abc")
+#consultar_cep("00000000")
+consultar_cep("abc")
+
+print("Texto da resposta",resposta.text) 
+#print("Texto da resposta",resposta.json()) 
+
 

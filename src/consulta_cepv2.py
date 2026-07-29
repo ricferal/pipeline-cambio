@@ -38,7 +38,10 @@ def consultar_cep(cep: str) -> dict | None:
     return dados
     
 if __name__ == "__main__":
-    for cep in ["52050480", "00000000", "01310100"]:
+    ceps = ["11111111", "abc", "52050480", "00000000", "01310100", "60356000"]
+    for cep in ceps:
         endereco = consultar_cep(cep)
         if endereco:
-            print(cep, endereco["logradouro"], endereco["bairro"])
+            print(cep, endereco["logradouro"], endereco["bairro"],endereco["estado"])
+
+
