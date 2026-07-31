@@ -19,7 +19,7 @@ def carregar_raw(caminho: Path) -> dict:
     
 def transformar(dados: dict, origem: str) -> pd.DataFrame:
     """Achata o dict de dicts em DataFrame limpo e tipado."""
-    registros = list(dados.values())  # a bandeja plana
+    registros = list(dados.values())  # a b0andeja plana
     df = pd.DataFrame(registros)
     df = df[["code", "codein", "bid", "ask",
              "high", "low", "create_date"]]
@@ -57,12 +57,21 @@ if __name__ == "__main__":
     if not arquivos:
         raise SystemExit("nenhum raw: rode src/coleta.py antes")
     logger.info("%d arquivos raw encontrados", len(arquivos))
+    
     tabelas = []
+    
     for caminho in arquivos:
         dados = carregar_raw(caminho)
         tabelas.append(transformar(dados, origem=caminho.name))
     df = pd.concat(tabelas, ignore_index=True)
+    
     validar(df)
     TRATADA_DIR.mkdir(parents=True, exist_ok=True)
     df.to_csv(TRATADA_DIR / "cotacoes.csv", index=False)
     logger.info("tratada gravada (%d linhas)", len(df))
+    print(df.head(5))
+    print(df.info())
+    print(df.columns.tolist())
+    pd.set_option("display.max_columns", None)
+    print(df.describe())
+    
