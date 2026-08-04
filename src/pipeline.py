@@ -31,7 +31,7 @@ def load(df: pd.DataFrame) -> None:
     df.to_sql(NOME_TABELA, engine, if_exists="replace", index=False)
     total = pd.read_sql(
         f"SELECT COUNT(*) AS n FROM {NOME_TABELA}", engine)["n"][0]
-    logger.info("carga concluida: %d linhas", total)
+    logger.info("crga concluida: %d linhas", total)
     
 def main() -> None:
     logger.info("pipeline iniciado")
