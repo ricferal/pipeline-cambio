@@ -21,16 +21,6 @@ from pymongo import MongoClient
 from config import MONGO_URL
 cliente = MongoClient(MONGO_URL)   # o create_engine do Mongo
 
-# ---------------------------------------------------------------------------
-# A connection string - PREENCHA com a sua
-# ---------------------------------------------------------------------------
-# Formato tipico do Atlas (troque usuario, senha e o endereco do cluster):
-#   mongodb+srv://usuario:senha@cluster0.xxxxx.mongodb.net/
-#
-# ATENCAO: essa string carrega usuario e senha - a regra do modulo vale
-# aqui tambem: credencial real NUNCA vai para o GitHub.
-#STRING_CONEXAO = "mongodb+srv://usuario:SUA_SENHA@cluster0.xxxxx.mongodb.net/"
-
 
 def primeiros_passos():
     # ------------------------------------------------------------------
